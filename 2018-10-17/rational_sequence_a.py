@@ -6,8 +6,10 @@ def read():
     numer_denom = 0
     all_pairs = []
     for iteration in range(0, num_rows):
-        numer_denom = input()
-        print(numer_denom)
+        case_numer_denom = input()
+        case,numer_denom = case_numer_denom.split(" ")
+        numer, denom = numer_denom.split("/")
+        print(case, numer, denom)
         # numbers.append(int(input()))
 
     return all_pairs
