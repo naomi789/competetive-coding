@@ -11,7 +11,7 @@ def read():
         numer, denom = numer_denom.split("/")
         all_pairs.append((int(case), int(numer), int(denom)))
 
-    # print(all_pairs)
+    print(all_pairs)
     return all_pairs
 
 
