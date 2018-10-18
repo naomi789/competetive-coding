@@ -1,12 +1,6 @@
 def read():
-
-    numbers = []
     num_numbers = int(input())
-    for iteration in range(0, num_numbers):
-        numbers.append(int(input()))
-
-    print(numbers)
-    return numbers
+    return num_numbers
 
 
 def main(data):
@@ -14,5 +8,5 @@ def main(data):
 
 
 data = read()
-
+print(data)
 main(data)
