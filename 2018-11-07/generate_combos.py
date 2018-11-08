@@ -53,7 +53,7 @@ def main():
 
 
     f = open('all_nums.txt', 'w')
-    f.write(str(all_nums))
+    f.write(str(divisible))
     f.close()
 
 
