@@ -11,30 +11,27 @@
 #
 # Bounds are 0≤k≤n≤1000;1≤n.
 
-def read():
-    first_line = input()
-    num_languages, num_translators = first_line.split(' ')
-    num_languages = int(num_languages)
-    num_translators = int(num_translators)
-    all_langs = input()
-    goal_langs = []
-    translators = defaultdict(list)
-    for lang in all_langs.split(' '):
-        goal_langs.append(lang)
-    for iteration in range(0, num_translators):
-        start, end, cost = input().split(' ')
-        cost = int(cost)
 
-        translators[start].append((end, cost))
+def main():
+    friends_high_score = int(input())
+    my_scores = list(input())
+    friends_scores = list(input())
 
-    # print(goal_langs)
-    # print(translators)
-    return goal_langs, translators
+    exam_length = len(my_scores)
 
-def main(read()):
+    friends_mistakes = exam_length - friends_high_score
 
-    pass
+    my_mistakes = 0
+    matches = 0
 
+    for mine, theirs in zip(my_scores, friends_scores):
+        if mine == theirs and matches < friends_high_score:
+            matches += 1
+        elif mine != theirs and my_mistakes < friends_mistakes:
+            my_mistakes += 1
 
+    print(matches + my_mistakes)
+
+    # print(matches, disagrees)
 
 main()
