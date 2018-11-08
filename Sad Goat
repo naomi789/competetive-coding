@@ -1,0 +1,30 @@
+import math
+nums = input().split(' ')
+goatX = int(nums[0])
+goatY = int(nums[1])
+
+HouseX1 = int(nums[2])
+HouseY1 = int(nums[3])
+HouseX2 = int(nums[4])
+HouseY2 = int(nums[5])
+
+if goatX < HouseX1:
+    if goatY < HouseY1:
+        rope = math.sqrt(math.pow(HouseX1-goatX, 2) + math.pow(HouseY1-goatY, 2))
+    if goatY < HouseY2 and goatY > HouseY1:
+        rope = HouseX1-goatX
+    if goatY > HouseY2:
+        rope = math.sqrt(math.pow(HouseX1-goatX, 2) + math.pow(HouseY2-goatY, 2))
+if goatX > HouseX1 and goatX < HouseX2:
+    if goatY > HouseY2:
+        rope = goatY-HouseY2
+    if goatY < HouseY1:
+        rope = HouseY1-goatY
+if goatX > HouseX2:
+    if goatY < HouseY1:
+        rope = math.sqrt(math.pow(HouseX2-goatX, 2) + math.pow(HouseY1-goatY, 2))
+    if goatY < HouseY2 and goatY > HouseY1:
+        rope = goatX - HouseX2
+    if goatY > HouseY2:
+        rope = math.sqrt(math.pow(HouseX2-goatX, 2) + math.pow(HouseY2-goatY, 2))
+print(rope)
